@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const session = require("express-session");
 const logger = require("morgan")
@@ -51,3 +52,5 @@ const server = https
 module.exports = server;
 ///고치는중
     
+=======
+>>>>>>> d5274e099af6f860f1c3270216a1fff42e7472ec
