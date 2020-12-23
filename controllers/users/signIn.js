@@ -7,8 +7,8 @@ module.exports ={
         })
         .then(response=>{
             req.session.userid = response.data.id
-            res.status(200).send();
+            res.status(200).send("<h1>로그인 실행</h1>");
         })
-        .catch(err=>console.log(err));
+        .catch(err=>console.log(err));        
     }
 };
