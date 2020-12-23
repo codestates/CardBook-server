@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require("express");
 const session = require("express-session");
 const logger = require("morgan")
@@ -39,7 +38,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Routing
-app.use('/users',router.user)
+app.use("/users",router.users)
 
 const server = https
     .createServer(
@@ -48,9 +47,12 @@ const server = https
             cert : cert
         },
         app
-    ).listen(4000);
+    ).listen(4000, (err)=>{
+        if(err){
+            return console.log(err)
+        }else{
+            console.log("This server is runnting on port 4000")
+        }
+    });
 module.exports = server;
-///고치는중
     
-=======
->>>>>>> d5274e099af6f860f1c3270216a1fff42e7472ec
