@@ -2,17 +2,14 @@ const multer = require('multer')
 const upload = multer({ dest: '../../image'});
 
 module.exports = {
-    post: (upload.single('image'), async (req,res) => {
+    post: ((req,res) => {
         try{
-            const image = req.file;
-            console.log(req.file)
-            if(image === undefined){
-                res.status(400).send('이미지 존재 하지 않습니다.')
+            if(req.file){
+                res.json(req.file);
+                console.log(req.file.path)
             } else{
-            res.status(200).send({
-                msg:'요청 성공'
-            })
-        }
+                throw 'error';
+            }
         }
         catch (err){
             console.log(err)
