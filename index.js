@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 const express = require("express");
 const session = require("express-session");
 const logger = require("morgan")
 const cors = require("cors");
 const fs = require('fs');
 const https = require('https');
-const router = require('./routes')
+const router = require('./routes');
 const key = fs.readFileSync("../auth/key.pem","utf-8");
 const cert = fs.readFileSync("../auth/cert.pem","utf-8");
 
@@ -52,5 +51,3 @@ const server = https
 module.exports = server;
 ///고치는중
     
-=======
->>>>>>> d5274e099af6f860f1c3270216a1fff42e7472ec
