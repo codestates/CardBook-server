@@ -1,12 +1,17 @@
 let express = require('express');
 let router = express.Router();
 
+const multer = require('multer');
+const upload = multer({
+    dest: __dirname + '/../images'
+})
+
 const {users} = require('../controllers');
 //POST /users/signin
 router.post('/login',users.signIn.post);
 //POST /users/signup
-router.post('/signup',users.signUp.post);
-router.post('/upload',users.upload.post);
+router.post('/signup',upload.single('image'),users.signUp.post);
+//router.post('/upload',upload.single('image'),users.upload.post);
 //POST /users/signout
 router.post('/logout',users.signOut.post)
 //GET /users/userinfo
