@@ -8,7 +8,6 @@ const router = require('./routes')
 const key = fs.readFileSync("../auth/key.pem","utf-8");
 const cert = fs.readFileSync("../auth/cert.pem","utf-8");
 
-const controller = require("./controllers");
 
 const app = express();
 //세션설정
@@ -27,6 +26,7 @@ app.use(
     })
 );
 app.use(logger('dev'));
+app.use(express.static('./upload'))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const corsOptions = {
@@ -55,4 +55,3 @@ const server = https
         }
     });
 module.exports = server;
-    
