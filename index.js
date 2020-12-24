@@ -38,7 +38,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Routing
-app.use('/users',router.user)
+app.use("/users",router.users)
 
 const server = https
     .createServer(
@@ -47,5 +47,11 @@ const server = https
             cert : cert
         },
         app
-    ).listen(4000);
+    ).listen(4000, (err)=>{
+        if(err){
+            return console.log(err)
+        }else{
+            console.log("This server is runnting on port 4000")
+        }
+    });
 module.exports = server;
