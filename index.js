@@ -8,6 +8,7 @@ const router = require('./routes')
 const key = fs.readFileSync("../auth/key.pem","utf-8");
 const cert = fs.readFileSync("../auth/cert.pem","utf-8");
 
+const controller = require("./controllers");
 
 const app = express();
 //세션설정
@@ -26,7 +27,6 @@ app.use(
     })
 );
 app.use(logger('dev'));
-app.use(express.static('./upload'))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const corsOptions = {
@@ -38,7 +38,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Routing
-app.use("/users",router.users)
+app.use('/users',router.user)
 
 const server = https
     .createServer(
@@ -47,11 +47,7 @@ const server = https
             cert : cert
         },
         app
-    ).listen(4000, (err)=>{
-        if(err){
-            return console.log(err)
-        }else{
-            console.log("This server is runnting on port 4000")
-        }
-    });
+    ).listen(4000);
 module.exports = server;
+///고치는중
+    
