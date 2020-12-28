@@ -7,7 +7,8 @@ module.exports = {
     database: "cardbook",
     host: "127.0.0.1",
     dialect: "mysql",
-    logging: false
+    logging: false,
+    timezone:"+9:00"
   },
   test: {
     username: "root",
