@@ -11,7 +11,7 @@ router.post('/signup',users.signUp.post);
 //POST /users/signout
 router.post('/logout',users.signOut.post)
 //GET /users/userinfo
-router.get('/userinfo',users.userInfo.get);
+router.get('/userinfo',express.static('images'),users.userInfo.get);
 //POST /users/userinfo
 router.post('/userinfo/modify',upload.single('image'),users.userInfo.post)
 module.exports = router;
