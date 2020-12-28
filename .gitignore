@@ -2,6 +2,7 @@
 /node_modules
 # production
 /.env
+/seeders
 # misc
 .DS_Store
 .env.local
