@@ -9,7 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,     
+        references:{
+          model: 'users',
+          key:'id'
+        }
       },
       title : {
         type: Sequelize.STRING
@@ -24,7 +28,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       subclassId : {
-        type:Sequelize.INTEGER
+        type:Sequelize.INTEGER,
+        references:{
+          model: 'subclasses',
+          key:'id'
+        }
       },
       createdAt: {
         allowNull: false,
@@ -34,7 +42,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
+    .catch(err=>console.log(err))
+    
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('contents');

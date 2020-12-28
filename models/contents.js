@@ -11,10 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      contents.hasMany(models.mylists);
+      contents.belongsTo(models.users,{
+        foreignKey:"id"
+      })
+      contents.belongsTo(models.subclass,{
+        foreignKey:"id"
+      })
     }
   };
   contents.init({
-    userId: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
     title: DataTypes.STRING,
     imeges : DataTypes.STRING,
     content : DataTypes.STRING,

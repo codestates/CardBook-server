@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      main_category.hasMany(models.middle_category)
     }
   };
   main_category.init({

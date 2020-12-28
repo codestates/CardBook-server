@@ -2,25 +2,25 @@ const dotenv = require('dotenv');
 dotenv.config();
 module.exports = {
   development: {
-    username: "root",
+    username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
-    database: "cardbook",
+    database: process.env.DATABASE_NAME,
     host: "127.0.0.1",
     dialect: "mysql",
     logging: false
   },
   test: {
-    username: "root",
+    username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
-    database: "",
+    database: process.env.DATABASE_NAME,
     host: "127.0.0.1",
     dialect: "mysql",
     logging: false
   },
   production: {
-    username: "root",
+    username: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
-    database: "",
+    database: process.env.DATABASE_NAME,
     host: "127.0.0.1",
     dialect: "mysql",
     logging: false

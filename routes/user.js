@@ -11,7 +11,6 @@ const {users} = require('../controllers');
 router.post('/login',users.signIn.post);
 //POST /users/signup
 router.post('/signup',upload.single('image'),users.signUp.post);
-//router.post('/upload',upload.single('image'),users.upload.post);
 //POST /users/signout
 router.post('/logout',users.signOut.post)
 //GET /users/userinfo
