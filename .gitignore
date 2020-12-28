@@ -2,6 +2,11 @@
 /node_modules
 # production
 /.env
+/images
+/auth
+/migrations
+/images
+
 # misc
 .DS_Store
 .env.local
