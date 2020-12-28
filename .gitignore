@@ -6,6 +6,7 @@
 /auth
 /migrations
 /images
+/seeders
 
 # misc
 .DS_Store
