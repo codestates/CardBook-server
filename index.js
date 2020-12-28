@@ -52,7 +52,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Routing
-app.use('/users',router.user)
+app.use('/users',router.users)
 
 const server = https
     .createServer(
