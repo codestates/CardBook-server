@@ -1,19 +1,3 @@
-
-const http = require('http');
-
-const hostname = '127.0.0.1';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
-
 const express = require("express");
 const session = require("express-session");
 const logger = require("morgan")
@@ -21,9 +5,12 @@ const cors = require("cors");
 const fs = require('fs');
 const https = require('https');
 const router = require('./routes')
-const key = fs.readFileSync("../auth/key.pem","utf-8");
-const cert = fs.readFileSync("../auth/cert.pem","utf-8");
+const key = fs.readFileSync("./auth/key.pem","utf-8");
+const cert = fs.readFileSync("./auth/cert.pem","utf-8");
 
+const controller = require("./controllers");
+
+const port = 4000;
 
 const app = express();
 //세션설정
@@ -42,7 +29,6 @@ app.use(
     })
 );
 app.use(logger('dev'));
-app.use(express.static('./upload'))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const corsOptions = {
@@ -54,7 +40,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Routing
-app.use("/users",router.users)
+app.use('/users',router.user)
+
 
 const server = https
     .createServer(
@@ -63,12 +50,7 @@ const server = https
             cert : cert
         },
         app
-    ).listen(4000, (err)=>{
-        if(err){
-            return console.log(err)
-        }else{
-            console.log("This server is runnting on port 4000")
-        }
+    ).listen(port, () => {
+        console.log(`https://localhost:${port} 서버 실행했습니다.`)
     });
 module.exports = server;
-
