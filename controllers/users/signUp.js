@@ -9,7 +9,7 @@ module.exports ={
             console.log(req.file)
             //필수 항목 누락시 오류메시지 출력
             if(!req.body.email || !req.body.username || !req.body.phone || !req.body.password) {
-                res.status(422).send('message: insufficient parameters supplied')
+                res.status(422).send('message: insufficient parameters supplied.')
             }
             //이메일 중복시 오류메시지 출력
             else if(userInfo){

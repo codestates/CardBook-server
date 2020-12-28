@@ -4,8 +4,6 @@
 /.env
 /images
 /auth
-/migrations
-/images
 /seeders
 
 # misc
