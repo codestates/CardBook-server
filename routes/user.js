@@ -37,6 +37,6 @@ router.post('/logout',users.signOut.post)
 //GET /users/userinfo
 router.get('/userinfo',users.userInfo.get);
 //POST /users/userinfo
-router.post('/userinfo/modify',users.userInfo.post)
+router.post('/userinfo/modify',userUpload.single('image'),users.userInfo.post)
 
 module.exports = router;
