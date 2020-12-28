@@ -8,8 +8,6 @@ const router = require('./routes')
 const key = fs.readFileSync("./auth/key.pem","utf-8");
 const cert = fs.readFileSync("./auth/cert.pem","utf-8");
 
-const controller = require("./controllers");
-
 const port = 4000;
 
 const app = express();
@@ -32,7 +30,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 const corsOptions = {
-    origin: true,
+    origin: 'http://localhost:3000/',
     credentials: true,
     methods: ["GET","POST","OPTIONS"]
 }
@@ -41,7 +39,6 @@ app.use(cors(corsOptions));
 
 //Routing
 app.use('/users',router.user)
-
 
 const server = https
     .createServer(
