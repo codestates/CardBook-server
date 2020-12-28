@@ -6,7 +6,7 @@
 /auth
 /migrations
 /images
-
+/auth
 # misc
 .DS_Store
 .env.local
