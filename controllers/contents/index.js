@@ -4,5 +4,6 @@ module.exports={
     viewPublicLists : require('./viewPublicLists'),
     write : require('./write'),
     modify : require('./modify'),
-    delete : require('./delete')
+    delete : require('./delete'),
+    add : require('./addMyLists')
 }

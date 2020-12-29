@@ -28,4 +28,6 @@ router.post('/write',contentsUpload.single('image'),contents.write.post)
 router.post('/modify',contentsUpload.single('image'),contents.modify.post);
 //POST /contents/delete
 router.post('/delete',contents.delete.post);
+//POST /contents/add
+router.post('/add',contents.add.post);
 module.exports = router;
