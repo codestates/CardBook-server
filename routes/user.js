@@ -1,8 +1,9 @@
 let express = require('express');
 let router = express.Router();
+const {users} = require('../controllers');
+const {auth} = require('../controllers')
 
 const multer = require('multer');
-const {users} = require('../controllers');
 
 let date = new Date();
 const userUpload = multer({
@@ -20,12 +21,16 @@ const userUpload = multer({
 router.post('/login',users.signIn.post);
 //POST /users/signup
 router.post('/signup',userUpload.single('image'),users.signUp.post);
-//router.post('/upload',upload.single('image'),users.upload.post);
 //POST /users/signout
 router.post('/logout',users.signOut.post)
 //GET /users/userinfo
 router.get('/userinfo',users.userInfo.get);
 //POST /users/userinfo
 router.post('/userinfo/modify',userUpload.single('image'),users.userInfo.post)
+
+// -----------------------Auth Login------------------------------------------------------------
+//POST 
+router.post('/gitlogin',auth.gitlogin.post);
+
 
 module.exports = router;
