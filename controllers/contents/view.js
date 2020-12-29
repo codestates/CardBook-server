@@ -16,7 +16,7 @@ module.exports ={
                     res.send(404,"failed to Update hit")
                 }                
             })
-            .catch(err=>console.log(err))         
+            .catch(err=>console.log(err))
             res.send(200,{...data.dataValues,hit:data.hit+1})
         })
         .catch(err=>{console.log(err)})

@@ -6,7 +6,7 @@ module.exports ={
             const userInfo = await users.findOne({
                 where : { email : req.body.email}
             })
-            console.log(req.file)
+            //console.log(req.file)
             //필수 항목 누락시 오류메시지 출력
             if(!req.body.email || !req.body.username || !req.body.phone || !req.body.password) {
                 res.status(422).send('message: insufficient parameters supplied')
@@ -26,7 +26,7 @@ module.exports ={
                 })
                 res.status(201).send(newUser)
             // 정상적인 회원가입 진행
-            }else{
+            }else{                
                 const newUser = await users.create({
                     photos: req.file.path,
                     phone: req.body.phone,
