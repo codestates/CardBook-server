@@ -17,17 +17,6 @@ const userUpload = multer({
     })
 })
 
-// const contentsUpload = multer({
-//     storage: multer.diskStorage({
-//         destination: (req, file, cb) => {
-//             cb(null, __dirname + '/../images/contents')
-//         },
-//         filename: (req, file, cb) => {
-//             cb(null, date + file.originalname);
-//         }
-//     })
-// })
-// -----------------------Users------------------------------------------------------------
 //POST /users/signin
 router.post('/login',users.signIn.post);
 //POST /users/signup

@@ -39,6 +39,9 @@ app.use(cors(corsOptions));
 
 //Routing
 app.use('/users',router.user)
+app.use('/contents',router.content)
+app.use(express.static('images/users'))
+app.use(express.static('images/contents'))
 
 const server = https
     .createServer(
