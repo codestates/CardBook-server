@@ -1,6 +1,6 @@
 const {contents} = require('../../models');
 module.exports = {
-    get: async (req,res)=>{        
+    get: async (req,res)=>{   
         await contents.findAll({
             where:{
                 userId:req.body.id
