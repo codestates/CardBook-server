@@ -32,4 +32,7 @@ router.post('/delete',contents.delete.post);
 router.post('/add',contents.add.post);
 //POST /contents/upload
 router.post('/upload',contentsUpload.single('image'),contents.upload.post)
+//GET /contents/search
+router.post('/search',contents.search.post);
+
 module.exports = router;

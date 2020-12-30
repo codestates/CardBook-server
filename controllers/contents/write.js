@@ -1,11 +1,13 @@
 const {contents} = require('../../models');
-const axios = require('axios');
+
 module.exports = {
     post: async (req,res)=>{
         const {userId,title,content,subclassId} = req.body
+        console.log(req.body)
         //contents table에 저장
         if(!title || !content || !subclassId) {
             res.status(422).send('message: insufficient parameters supplied.')
+            return;
         }
         await contents.create({
             userId:userId,
