@@ -20,7 +20,7 @@ const userUpload = multer({
 //POST /users/signin
 router.post('/login',users.signIn.post);
 //POST /users/signup
-router.post('/signup',userUpload.single('image'),users.signUp.post);
+router.post('/signup',users.signUp.post);
 //POST /users/signout
 router.post('/logout',users.signOut.post)
 //GET /users/userinfo
