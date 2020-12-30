@@ -11,6 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.contents.belongsTo(models.users,{
+        foreignKey:"userId"
+      });
+      models.contents.hasMany(models.mylists,{
+        foreignKey:'cId',
+        onDelete:'cascade'
+      })
     }
   };
   contents.init({
