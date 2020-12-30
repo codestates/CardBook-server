@@ -31,8 +31,10 @@ router.post('/userinfo/modify',users.userInfo.post)
 router.post('/upload',userUpload.single('image'),users.upload.post);
 
 // -----------------------Auth Login------------------------------------------------------------
-//POST 
+//POST /user/gitlogin
 router.post('/gitlogin',auth.gitlogin.post);
+//POST /user/kakaologin
+router.post('/kakaologin',auth.kakaologin.post);
 
 
 module.exports = router;
