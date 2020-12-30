@@ -12,8 +12,8 @@ module.exports={
             let photos = '';
             if(req.file){
                 photos = req.file.path
-            }else{
-                photos= "/home/minsu/CodeStates/im24-CardBook-server/images/default_profile_image.png";
+            }else{                
+                photos = "/home/ubuntu/CardBook-server/images/users/default_profile_image.png";
             }
 
             await users.update(
