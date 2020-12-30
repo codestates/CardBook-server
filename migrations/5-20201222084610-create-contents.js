@@ -9,7 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER,
+        references:{
+          model:'users',
+          key:'id'
+        },
+        onUpdate:'CASCADE',
+        onDelete: 'SET NULL'
       },
       title : {
         type: Sequelize.STRING
@@ -24,7 +30,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       subclassId : {
-        type:Sequelize.INTEGER
+        type:Sequelize.INTEGER,
+        references:{
+          model:'subclasses',
+          key:'id'
+        },
+        onUpdate:'CASCADE',
+        onDelete: 'SET NULL'
       },
       createdAt: {
         allowNull: false,

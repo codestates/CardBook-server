@@ -12,7 +12,7 @@ module.exports = {
             hit:0
         })
         .then(()=>res.send(200,"This content is successfully written"))
-        .catch(()=>res.send(404,"Failed to write this content"));     
+        .catch(()=>res.send(404,"Failed to write this content"));
 
         
     }
