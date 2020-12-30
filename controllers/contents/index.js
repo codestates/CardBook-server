@@ -6,5 +6,6 @@ module.exports={
     modify : require('./modify'),
     delete : require('./delete'),
     add : require('./addMyLists'),
-    upload : require('./upload')
+    upload : require('./upload'),
+    search : require('./search')
 }
