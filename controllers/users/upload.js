@@ -34,6 +34,5 @@ module.exports={
             })            
             .catch((err)=>res.send(404,`Error : ${err}`))    
         }
-        
     }
 }
