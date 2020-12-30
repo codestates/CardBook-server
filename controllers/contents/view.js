@@ -9,16 +9,15 @@ module.exports ={
         })
         .then((data)=>{
             //조회수
-            res.body
             contents.update({hit:data.hit+1},{where:{id:req.body.id}})
             .then(resp=>{
                 if(!resp[0]){
-                    res.send(404,"failed to Update hit")
+                    res.send(304,"Failed to increase view count")
                 }                
             })
             .catch(err=>console.log(err))
             res.send(200,{...data.dataValues,hit:data.hit+1})
         })
-        .catch(err=>{console.log(err)})
+        .catch(err=>res.send(404,"Failed to show up this content"))
     }
 }

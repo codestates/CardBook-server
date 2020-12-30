@@ -2,8 +2,7 @@ const {contents} = require('../../models');
 module.exports = {
     post: async (req,res)=>{
         const {userId,title,content,subclassId} = req.body
-        //contents table에 저장
-        console.log(req.file.path)
+        //contents table에 저장        
         await contents.create({
             userId:userId,
             title:title,
