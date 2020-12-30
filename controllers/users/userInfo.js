@@ -32,14 +32,12 @@ module.exports ={
             .then(()=>res.send(200,"Successfully Updated"))
             .catch(()=> res.send(404,"This user does not exist"))
         }else{
-            //유저정보만 변경
-            console.log(req.file)
+            //유저정보만 변경            
             await users.update(
                 {
                     username : req.body.username,
                     email : req.body.email,
-                    phone : req.body.phone,
-                    photos : req.file.path              
+                    phone : req.body.phone,                             
                 },
                 {
                     where:{
