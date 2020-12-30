@@ -5,5 +5,6 @@ module.exports={
     write : require('./write'),
     modify : require('./modify'),
     delete : require('./delete'),
-    add : require('./addMyLists')
+    add : require('./addMyLists'),
+    upload : require('./upload')
 }

@@ -23,11 +23,13 @@ router.get('/viewmylists',contents.viewMyLists.get);
 //GET /contents/viewpubliclists
 router.get('/viewpubliclists',contents.viewPublicLists.get)
 //POST /contents/write
-router.post('/write',contentsUpload.single('image'),contents.write.post)
+router.post('/write',contents.write.post)
 //POST /contents/modify
-router.post('/modify',contentsUpload.single('image'),contents.modify.post);
+router.post('/modify',contents.modify.post);
 //POST /contents/delete
 router.post('/delete',contents.delete.post);
 //POST /contents/add
 router.post('/add',contents.add.post);
+//POST /contents/upload
+router.post('/upload',contentsUpload.single('image'),contents.upload.post)
 module.exports = router;

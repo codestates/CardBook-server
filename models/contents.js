@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey:'cId',
         onDelete:'cascade'
       })
+      models.contents.belongsTo
     }
   };
   contents.init({
