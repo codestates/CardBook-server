@@ -37,7 +37,9 @@ const corsOptions = {
     origin: true,
     credentials: true,
     methods: ["GET","POST","OPTIONS"]
-}))
+}
+
+app.use(cors(corsOptions));
 
 //Routing
 app.use('/users',router.user)
@@ -55,4 +57,4 @@ const server = https
     ).listen(port, () => {
         console.log(`Server Start.`)
     });
-module.exports = app;
+module.exports = server;

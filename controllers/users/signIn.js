@@ -6,8 +6,10 @@ module.exports ={
             res.send(404,"Email or Password is blank")
         }
         await users.findOne({
+            where:{
             email:req.body.email,
-            password:req.body.password
+            password:req.body.password,
+            }
         })
         .then(response=>{
             req.session.userid = response.email
