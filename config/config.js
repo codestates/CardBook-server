@@ -4,8 +4,10 @@ module.exports = {
   development: {
     username: process.env.DATABASE_USERID,
     password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE_NAME,
-    host: process.env.DATABASE_HOST,
+    //database: process.env.DATABASE_NAME,
+    //host: process.env.DATABASE_HOST,
+    database:"cardbook",
+    host:"127.0.0.1",
     dialect: process.env.DATABASE_DIALECT,
     logging: false,
     timezone:"+9:00"

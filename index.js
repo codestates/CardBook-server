@@ -5,10 +5,10 @@ const cors = require("cors");
 const fs = require('fs');
 const https = require('https');
 const router = require('./routes')
-//const cert = fs.readFileSync("./auth/cert.pem","utf-8");
-//const key = fs.readFileSync("./auth/key.pem","utf-8");
-const cert = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/fullchain.pem","utf-8");
-const key = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/privkey.pem","utf-8");
+const cert = fs.readFileSync("./auth/cert.pem","utf-8");
+const key = fs.readFileSync("./auth/key.pem","utf-8");
+// const cert = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/fullchain.pem","utf-8");
+// const key = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/privkey.pem","utf-8");
 
 
 
@@ -37,7 +37,7 @@ const corsOptions = {
     origin: true,
     credentials: true,
     methods: ["GET","POST","OPTIONS"]
-}))
+}
 
 //Routing
 app.use('/users',router.user)
