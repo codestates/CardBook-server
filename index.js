@@ -32,8 +32,8 @@ app.use(
 );
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(cors({
+app.use(express.urlencoded({extended:false}));
+const corsOptions = {
     origin: true,
     credentials: true,
     methods: ["GET","POST","OPTIONS"]
@@ -41,6 +41,9 @@ app.use(cors({
 
 //Routing
 app.use('/users',router.user)
+app.use('/contents',router.content)
+app.use(express.static('images/users'))
+app.use(express.static('images/contents'))
 
 const server = https
     .createServer(
