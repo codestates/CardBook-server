@@ -5,8 +5,12 @@ const cors = require("cors");
 const fs = require('fs');
 const https = require('https');
 const router = require('./routes')
-const key = fs.readFileSync("./auth/key.pem","utf-8");
-const cert = fs.readFileSync("./auth/cert.pem","utf-8");
+//const cert = fs.readFileSync("./auth/cert.pem","utf-8");
+//const key = fs.readFileSync("./auth/key.pem","utf-8");
+const cert = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/fullchain.pem","utf-8");
+const key = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/privkey.pem","utf-8");
+
+
 
 const port = 4000;
 
@@ -18,7 +22,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         cookie: {
-            domain: "localhost",
+            domain: "https://www.cardbookserver.tk",
             maxAge: 24 * 6 * 60 * 10000,
             sameSite: "none",
             httpOnly: true,
@@ -33,9 +37,7 @@ const corsOptions = {
     origin: true,
     credentials: true,
     methods: ["GET","POST","OPTIONS"]
-}
-//CORS설정
-app.use(cors(corsOptions));
+}))
 
 //Routing
 app.use('/users',router.user)
@@ -51,6 +53,6 @@ const server = https
         },
         app
     ).listen(port, () => {
-        console.log(`https://localhost:${port} 서버 실행했습니다.`)
+        console.log(`Server Start.`)
     });
-module.exports = server;
+module.exports = app;
