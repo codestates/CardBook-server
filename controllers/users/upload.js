@@ -7,7 +7,7 @@ module.exports={
                 id:req.body.id
             }
         })
-        .catch(()=>res.send(404,"This id is invalid"));
+        .catch(()=>res.send(404,"This user is invalid"));
         if(orignalData){
             let photos = '';
             if(req.file){
@@ -32,7 +32,7 @@ module.exports={
                 }
                 res.send(200,"Successfully upload");    
             })            
-            .catch((err)=>res.send(404,`Error : ${err}`))    
+            .catch((err)=>res.send(304,`Error : ${err}`))    
         }
     }
 }

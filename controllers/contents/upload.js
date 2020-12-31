@@ -27,6 +27,6 @@ module.exports={
             }
             res.send(200,"Successfully upload");          
         })
-        .catch(err=>res.send(404,`Error : ${err}`))
+        .catch(err=>res.send(304,`Error : ${err}`))
     }
 }
