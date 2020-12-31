@@ -50,6 +50,6 @@ const server = https
         },
         app
     ).listen(port, () => {
-        console.log(`서버 실행했습니다.`)
+        console.log(`Server Start.`)
     });
 module.exports = app;
