@@ -20,6 +20,6 @@ module.exports = {
             }
         })
         .then(data=>res.send(200,data))
-        .catch(err=>res.send(404,`Something is wrong because of Error : ${err}`));
+        .catch(err=>res.send(400,{message:err}));
     }
 }
