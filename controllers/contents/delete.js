@@ -10,9 +10,11 @@ module.exports = {
         await contents.destroy({where:{id:req.body.id}})
         .then(()=>{
             //컨텐츠 이미지 파일 삭제
-            fs.unlink(content.images,()=>{
-                res.send(200,"This content successfully deleted");
-            });
+            if(content.images ||
+                content.images!=="/home/ubuntu/CardBook-server/images/users/default_profile_image.png"){
+                    fs.unlink(content.images,()=>{});
+                }
+            res.send(200,"This content successfully deleted");
         })
         .catch(()=>res.send(404,"Failed to delete this content"))
         
