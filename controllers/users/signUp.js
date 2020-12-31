@@ -1,4 +1,5 @@
-const {users} = require('../../models')
+const {users} = require('../../models');
+const {body, validationResult} = require('express-validator');
 
 module.exports ={
     post: async (req, res)=>{
