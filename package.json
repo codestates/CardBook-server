@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Ukhwan/im24-CardBook-server#readme",
   "dependencies": {
+    "aws-sdk": "^2.820.0",
     "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -26,6 +27,7 @@
     "express-validator": "^6.9.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",
