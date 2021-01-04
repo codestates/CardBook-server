@@ -22,6 +22,7 @@ module.exports ={
                     username: req.body.username,
                     email: req.body.email,
                     password: req.body.password,
+                    photos: req.body.profileimgsrc
                 })
                 res.status(201).send(newUser)
             }
