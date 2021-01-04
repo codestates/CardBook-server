@@ -12,7 +12,7 @@ module.exports={
             let photos = '';
             if(req.file){
                 photos = req.file.path
-            }else{                
+            }else{
                 photos = "/home/ubuntu/CardBook-server/images/users/default_profile_image.png";
             }
 
@@ -32,7 +32,7 @@ module.exports={
                 }
                 res.send(200,"Successfully upload");    
             })            
-            .catch((err)=>res.send(304,`Error : ${err}`))    
+            .catch((err)=>res.send(304,`Error : ${err}`))
         }
     }
 }
