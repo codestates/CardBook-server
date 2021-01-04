@@ -5,24 +5,13 @@ const {auth} = require('../controllers')
 const AWS = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
+const moment = require('moment');
+const momenttz = require('moment-timezone');
 const dotenv = require('dotenv');
 dotenv.config();
 
-let date = new Date();
-
-// const multer = require('multer');
-
-// let date = new Date();
-// const userUpload = multer({
-//     storage: multer.diskStorage({
-//         destination: (req, file, cb) => {
-//             cb(null, __dirname + '/../images/users')
-//         },
-//         filename: (req, file, cb) => {
-//             cb(null, date + file.originalname);
-//         }
-//     })
-// })
+momenttz().tz("Asia/Seoul").format();
+let date = moment().format('YYYY-MM-DD HH:mm:ss')
 
 const S3 = new AWS.S3({
     AWS_ACCESSKEY_ID: process.env.AWS_ACCESSKEY_ID,

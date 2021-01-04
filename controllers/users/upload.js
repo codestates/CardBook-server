@@ -3,16 +3,16 @@ const fs = require('fs');
 
 module.exports={
     post: async (req,res)=>{
-        if(req.file === undefined){
-            res.send(404,'No File Selected');
-        } else {
+        // if(req.file === undefined){
+        //     res.send(404,'No File Selected');
+        // } else {
             const imgName = req.file.key;
             const imgLocation = req.file.location;
             res.send(200, {
                 image:imgName,
                 location: imgLocation
             })
-        }
+        //}
         // let orignalData = await users.findOne({
         //     where:{
         //         id:req.body.id
