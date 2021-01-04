@@ -14,21 +14,23 @@ const key = fs.readFileSync("./auth/key.pem","utf-8");
 const port = 4000;
 
 const app = express();
+
 //세션설정
-app.use(
-    session({
-        secret: 'CardBook',
-        resave: false,
-        saveUninitialized: true,
-        cookie: {
-            domain: "www.cardbookserver.tk",
-            maxAge: 24 * 6 * 60 * 10000,
-            sameSite: "none",
-            httpOnly: true,
-            secure: true,
-        }
-    })
-);
+// app.use(
+//     session({
+//         secret: 'CardBook',
+//         resave: false,
+//         saveUninitialized: true,
+//         cookie: {
+//             domain: "www.cardbookserver.tk",
+//             maxAge: 24 * 6 * 60 * 10000,
+//             sameSite: "none",
+//             httpOnly: true,
+//             secure: true,
+//         }
+//     })
+// );
+
 app.use(cookieParser())
 app.use(logger('dev'));
 app.use(express.json());
