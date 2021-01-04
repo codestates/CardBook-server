@@ -23,7 +23,7 @@ module.exports={
         //     let photos = '';
         //     if(req.file){
         //         photos = req.file.location
-        //     }else{                
+        //     }else{
         //         photos = "https://cardbook-images.s3.ap-northeast-2.amazonaws.com/user_profile_images/default_profile_image.png";
         //     }
 
