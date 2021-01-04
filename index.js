@@ -5,10 +5,11 @@ const cors = require("cors");
 const fs = require('fs');
 const https = require('https');
 const router = require('./routes')
+const cookieParser = require('cookie-parser')
 const cert = fs.readFileSync("./auth/cert.pem","utf-8");
 const key = fs.readFileSync("./auth/key.pem","utf-8");
-// const cert = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/fullchain.pem","utf-8");
-// const key = fs.readFileSync("/etc/letsencrypt/live/www.cardbookserver.tk/privkey.pem","utf-8");
+// const cert = fs.readFileSync("/etc/letsencrypt/live/api.cardbook.tk/fullchain.pem","utf-8");
+// const key = fs.readFileSync("/etc/letsencrypt/live/api.cardbook.tk/privkey.pem","utf-8");
 
 
 
@@ -30,6 +31,7 @@ app.use(
         }
     })
 );
+app.use(cookieParser())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));

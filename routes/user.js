@@ -10,6 +10,8 @@ const momenttz = require('moment-timezone');
 const dotenv = require('dotenv');
 dotenv.config();
 
+const {accessTokenRequest} = require('../controllers/users/accessTokenRequest')
+
 momenttz().tz("Asia/Seoul").format();
 let date = moment().format('YYYY-MM-DD HH:mm:ss')
 
@@ -31,14 +33,16 @@ const upload = multer({
     })
 })
 
-//POST /users/signin
-router.post('/login',users.signIn.post);
+//POST /users/login
+router.post('/login',users.login.post);
 //POST /users/signup
 router.post('/signup',users.signUp.post);
 //POST /users/signout
 router.post('/logout',users.signOut.post)
 //GET /users/userinfo
-router.get('/userinfo',users.userInfo.get);
+router.get('/userinfo',accessTokenRequest,users.userInfo.get);
+//GET /users/refreshToken
+router.get('/refreshToken',users.refreshToken.get)
 //POST /users/userinfo
 router.post('/userinfo/modify',users.userInfo.post)
 //POST /users/upload
