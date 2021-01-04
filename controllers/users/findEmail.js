@@ -3,7 +3,7 @@ module.exports = {
     post : async(req,res)=>{
         await users.findOne({
             where:{
-                email : req.body.email
+                phone : req.body.phone
             }
         })
         .then(user=>{
