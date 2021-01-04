@@ -47,12 +47,17 @@ router.get('/refreshToken',users.refreshToken.get)
 router.post('/userinfo/modify',users.userInfo.post)
 //POST /users/upload
 router.post('/upload',upload.single('singup_img_upload'),users.upload.post);
+//POST /user/findemail
+router.post('/findemail',users.findEmail.post)
+//POST /user/findpassword
+router.post('/findemail',users.findPassword.post)
 
 // -----------------------Auth Login------------------------------------------------------------
 //POST /users/gitlogin
 router.post('/gitlogin',auth.gitlogin.post);
 //POST /users/kakaologin
 router.post('/kakaologin',auth.kakaologin.post);
+
 
 
 module.exports = router;

@@ -11,8 +11,6 @@ const key = fs.readFileSync("./auth/key.pem","utf-8");
 // const cert = fs.readFileSync("/etc/letsencrypt/live/api.cardbook.tk/fullchain.pem","utf-8");
 // const key = fs.readFileSync("/etc/letsencrypt/live/api.cardbook.tk/privkey.pem","utf-8");
 
-
-
 const port = 4000;
 
 const app = express();
